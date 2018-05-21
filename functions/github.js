@@ -35,11 +35,11 @@ function generateResponse(event, details) {
       };
 
     return new Promise(function(resolve, reject) {
-        if (details) {
+        if (event) {
             resolve(response);  // fulfilled successfully
          }
          else {
-            reject(/* reason */);  // error, rejected
+            reject("failed");  // error, rejected
          }
       
        })
@@ -56,17 +56,14 @@ module.exports.helloGithub = (event, context, callback) => {
         userDetails = result;
         console.log("Initialized user details");
         // Use user details from here
-        console.log(userDetails)
-        return userDetails
+        //console.log(userDetails)
+        return generateResponse(event, userDetails)
     }, errHandler)
     .then(function(result) {
         // Print the code activity. Prints 110
-        console.log("Total # of repos: ", result.public_gists + result.public_repos);
-        return generateResponse(event, result)
+        //console.log("Total # of repos: ", result.public_gists + result.public_repos);
+        callback(null, result)
     }, errHandler )
-    .then(function(response){
-        callback(null, response)
-    })
     .catch(errHandler)
 
 }
