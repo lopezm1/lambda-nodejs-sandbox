@@ -55,10 +55,10 @@ module.exports.helloGithub = (event, context, callback) => {
     initializePromise.then(function(result) {
         userDetails = result;
         return generateResponse(event, userDetails) // return another promise
-    }, errHandler)
+    })
     .then(function(result) {
         callback(null, result)
-    }, errHandler )
+    })
     .catch(errHandler)
 
 }
