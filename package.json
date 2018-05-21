@@ -1,0 +1,22 @@
+{
+  "name": "lambda-nodejs-sandbox",
+  "version": "1.0.0",
+  "description": "sandbox env for playing with lambda nodejs functions",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopezm1/lambda-nodejs-sandbox.git"
+  },
+  "author": "Miguel Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lopezm1/lambda-nodejs-sandbox/issues"
+  },
+  "homepage": "https://github.com/lopezm1/lambda-nodejs-sandbox#readme",
+  "dependencies": {
+    "request": "^2.86.0"
+  }
+}
