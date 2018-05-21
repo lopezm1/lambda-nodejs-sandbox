@@ -54,14 +54,9 @@ module.exports.helloGithub = (event, context, callback) => {
     var initializePromise = initialize();
     initializePromise.then(function(result) {
         userDetails = result;
-        console.log("Initialized user details");
-        // Use user details from here
-        //console.log(userDetails)
-        return generateResponse(event, userDetails)
+        return generateResponse(event, userDetails) // return another promise
     }, errHandler)
     .then(function(result) {
-        // Print the code activity. Prints 110
-        //console.log("Total # of repos: ", result.public_gists + result.public_repos);
         callback(null, result)
     }, errHandler )
     .catch(errHandler)
